@@ -1,0 +1,236 @@
+$smfont: 1rem;
+$lgfont: 2rem;
+$mdfont: 1.5rem;
+$fonts: "Raleway", sans-serif;
+$background: blue;
+$color: ($background, 25%);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+@mixin body-color {
+  font-family: $fonts;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  transition: all 4s ease-out;
+}
+
+@mixin theme($theme: red) {
+  background: $theme;
+  color: lighten($theme, 27%);
+}
+@mixin btn-background($theme: red) {
+  background: $theme;
+  color: white;
+}
+@mixin randbutton {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  button {
+    border: none;
+    font-size: $smfont;
+    font-family: sans-serif;
+    padding: 10px;
+    border-radius: 4px;
+  }
+}
+.red {
+  @include body-color;
+  @include theme;
+  button,
+  .icon-box div {
+    @include btn-background;
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(red, 14%));
+  }
+}
+.blue {
+  @include body-color;
+  @include theme($theme: blue);
+  button,
+  .icon-box div {
+    @include btn-background($theme: blue);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(blue, 14%));
+  }
+}
+.orange {
+  @include body-color;
+  @include theme($theme: orange);
+  button,
+  .icon-box div {
+    @include btn-background($theme: orange);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(orange, 14%));
+  }
+}
+.green {
+  @include body-color;
+  @include theme($theme: green);
+  button,
+  .icon-box div {
+    @include btn-background($theme: green);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(green, 14%));
+  }
+}
+.grey {
+  @include body-color;
+  @include theme($theme: grey);
+  button,
+  .icon-box div {
+    @include btn-background($theme: grey);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(grey, 14%));
+  }
+}
+.purple {
+  @include body-color;
+  @include theme($theme: purple);
+  button,
+  .icon-box div {
+    @include btn-background($theme: purple);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(purple, 14%));
+  }
+}
+.yellow {
+  @include body-color;
+  @include theme($theme: yellow);
+  button,
+  .icon-box div {
+    @include btn-background($theme: yellow);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(yellow, 14%));
+  }
+}
+.brown {
+  @include body-color;
+  @include theme($theme: brown);
+  button,
+  .icon-box div {
+    @include btn-background($theme: brown);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(brown, 14%));
+  }
+}
+.indigo {
+  @include body-color;
+  @include theme($theme: indigo);
+  button,
+  .icon-box div {
+    @include btn-background($theme: indigo);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(indigo, 14%));
+  }
+}
+.pink {
+  @include body-color;
+  @include theme($theme: pink);
+  button,
+  .icon-box div {
+    @include btn-background($theme: pink);
+  }
+  button:hover,
+  .icon-box div:hover {
+    @include btn-background($theme: darken(pink, 14%));
+  }
+}
+
+.rb-container {
+  background-color: black;
+  min-height: 150px;
+  width: 500px;
+  max-height: 80vh;
+  border-radius: 4px;
+  padding: 35px;
+  overflow-y: hidden;
+
+  .quote {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: center;
+    margin: 0 10px;
+    font-size: $lgfont;
+    font-family: $fonts;
+
+    p {
+      overflow: hidden;
+      transition: text 0.5s ease-in-out;
+    }
+  }
+  .name {
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+    font-size: $smfont;
+  }
+  .rb-container-btm {
+    @include randbutton;
+  }
+
+  .icon-box {
+    display: flex;
+    div {
+      padding: 10px;
+      margin: 5px;
+      text-align: left;
+      border-radius: 4px;
+    }
+  }
+}
+.readmore,
+.readless {
+  color: white !important;
+  background-color: transparent !important;
+  padding: 0;
+  margin: 0;
+  font-size: $lgfont;
+  border: none;
+  cursor: pointer;
+  transition: transform ease-in-out 0.5s;
+  overflow: hidden;
+}
+.readless {
+  transform: rotate(-180deg);
+}
+.readmore::after {
+  font-weight: bold;
+  content: "\21B7";
+}
+.readless::after {
+  font-weight: bold;
+  content: "\21B7";
+}
+.footer {
+  margin: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: black;
+}
