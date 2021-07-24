@@ -33,7 +33,7 @@ const RandomBox = ({ getColor }) => {
         setQuote(response.data);
       })
       .then(() => {
-        setColor(colors[Math.floor(Math.random() * 10)]);
+        setColor(colors[Math.floor(Math.random() * colors.length)]);
       })
       .catch(function (error) {
         console.error(error);
@@ -46,7 +46,6 @@ const RandomBox = ({ getColor }) => {
   var something = quote.content
     ? quote.content.substring(0, 150)
     : "loading...";
-
   return (
     <div className="rb-container">
       <div className="quote">

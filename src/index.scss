@@ -18,7 +18,7 @@ $color: ($background, 25%);
   align-items: center;
   height: 100vh;
   width: 100%;
-  transition: all 4s ease-out;
+  transition: background-color 4s ease;
 }
 
 @mixin theme($theme: red) {
@@ -182,7 +182,7 @@ $color: ($background, 25%);
 
     p {
       overflow: hidden;
-      transition: text 0.5s ease-in-out;
+      transition: color 4s;
     }
   }
   .name {
