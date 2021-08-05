@@ -23,7 +23,7 @@ const RandomBox = ({ getColor }) => {
       method: "GET",
       url: "https://quotes15.p.rapidapi.com/quotes/random/",
       headers: {
-        "x-rapidapi-key": "86ec4e722cmshb326e4f824b391cp1c67c7jsne42429987b0c",
+        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         "x-rapidapi-host": "quotes15.p.rapidapi.com",
       },
     };

@@ -13,7 +13,7 @@ function App() {
       <RandomBox getColor={(color) => setColor(color)} />
       <div className="footer">
         <h4>samuel built with love</h4>
-        {console.log(color)}
+      
       </div>
     </div>
   );
